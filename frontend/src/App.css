@@ -1,0 +1,163 @@
+/* Reset default styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set background color */
+body {
+  background-color: gray;
+}
+
+/* Main container */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Box styling */
+.box {
+  background-color: black;
+  margin-top: 35px;
+  padding: 10px 20px;
+  width: 900px;
+  height: 600px;
+  border-radius: 30px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading style */
+.heading {
+  color: white;
+}
+
+/* Button style */
+.btn {
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  font-size: medium;
+  padding: 10px 10px;
+  color: aqua;
+  background-color: transparent;
+}
+.login-signup-box {
+  margin-top: 80px;
+}
+
+.login-signup-heading {
+  color: white;
+}
+.input-field {
+  width: 300px;
+  padding: 10px 10px;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: medium;
+  background-color: white;
+  border-width: 0;
+  border: 3px solid green;
+}
+
+.login-signup-btn {
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: medium;
+  padding: 10px 10px;
+  color: white;
+  font-weight: bold;
+  background-color: orange;
+}
+
+.parent-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  margin: 10px 10%;
+  background-color: #303030;
+  border-radius: 3px;
+}
+
+.child-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+}
+
+.todo-input {
+  padding: 10px 20px;
+  margin-right: 5px;
+  border-radius: 15px;
+  border-color: red;
+}
+
+.todo-btn {
+  padding: 10px 15px;
+  background-color: orange;
+  font-weight: bold;
+  color: white;
+  border-radius: 25px;
+  border-style: none;
+}
+
+.todo-scroll-container {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 400px; /* Set a maximum height for the container */
+}
+.todo-scroll-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+.todos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 15px;
+  margin-top: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2px;
+  background-color: #303030;
+}
+
+.task-name {
+  color: orange;
+  font-size: 30px;
+  text-align: start;
+  margin-bottom: 2px;
+}
+
+.desc-name {
+  color: white;
+}
+
+.complete-btn {
+  margin: 5px 10px;
+  padding: 7px 15px;
+  background-color: white;
+  font-weight: bold;
+  color: chartreuse;
+  border-radius: 25px;
+  border-style: none;
+  border: 2px solid green;
+}
+
+.delete-btn {
+  padding: 7px 15px;
+  background-color: white;
+  font-weight: bold;
+  color: red;
+  border-radius: 25px;
+  border-style: none;
+  border: 2px solid red;
+}
