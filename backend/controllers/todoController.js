@@ -48,13 +48,9 @@ const addTodo = async (req, res) => {
       status: false,
     });
 
+    const todos = await ToDo.find({ userId: id });
     if (todo) {
-      return res.status(201).json({
-        userId: id,
-        title,
-        description,
-        status: false,
-      });
+      return res.status(200).json(todos);
     } else {
       return res.status(401).json({ message: "ToDo creation failed" });
     }
@@ -81,10 +77,9 @@ const deleteTodo = async (req, res) => {
 
     const delTodo = await ToDo.findByIdAndDelete({ _id: todoId });
 
+    const todos = await ToDo.find({ userId: id });
     if (delTodo) {
-      return res.status(201).json({
-        message: "Task Deleted Successfully",
-      });
+      return res.status(200).json(todos);
     } else {
       return res.status(400).json({ message: "Task deletedtion failed" });
     }
@@ -114,8 +109,9 @@ const updateStatus = async (req, res) => {
         { $set: { status: true } },
         { new: true }
       );
+      const todos = await ToDo.find({ userId: id });
       if (todo) {
-        return res.status(201).json({ message: "Status updated" });
+        return res.status(200).json(todos);
       } else {
         return res.status(400).json({ message: "Status Updation failed" });
       }
