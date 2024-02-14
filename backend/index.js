@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
+const cors = require("cors");
 const connectDB = require("./config/dbConfig");
 const userRoutes = require("./routes/userRoutes");
 const todoRoutes = require("./routes/todoRoutes");
@@ -11,7 +12,12 @@ connectDB();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.send(`
     <html>
