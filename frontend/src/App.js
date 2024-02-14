@@ -1,23 +1,47 @@
 import "./App.css";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Todos from "./components/Todos";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  register,
+  setIsLoggedIn,
+  setTodoNull,
+  setUserNull,
+} from "./redux/actions/todoActions";
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
-  const [user, setUser] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { user, isLoggedIn } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const switchForm = () => {
     setIsLogin(!isLogin);
   };
+
+  const handleLogout = () => {
+    dispatch(setUserNull());
+    dispatch(setIsLoggedIn(false));
+    // dispatch(setTodoNull());
+  };
+
   return (
     <div className="App">
       <div className="box">
-        <div>
+        <div className="bar">
+          <span>Arjun</span>
           <h1 className="heading">My Todos</h1>
+          {isLoggedIn ? (
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            ""
+          )}
         </div>
-        {user ? (
+        {isLoggedIn ? (
           <Todos />
         ) : (
           <div className="login-signup-box">
